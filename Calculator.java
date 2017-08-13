@@ -53,7 +53,7 @@ public class Calculator
 
         // Now it's your turn! Create a divide() method and write some
         // print statements to test that it works right.
-        System.out.println("8 divide 2 equals " + divide(8, 2));
-        System.out.println("9 divide 3 equals " + divide(9, 3));
+        System.out.println("2 divide 8 equals " + divide(2, 8));
+        System.out.println("3 divide 9 equals " + divide(3, 9));
     }
 }
