@@ -18,7 +18,7 @@ public class Calculator
         //Fix the line below!
         return a * b;
     }
-    public static int divide(int a, int b)
+    public static float divide(float a, float b)
     {
         //As an added challenge for this assignment, 
         //make sure your divide function correctly handles 2 / 8. 
