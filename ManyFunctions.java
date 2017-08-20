@@ -28,8 +28,6 @@ public class ManyFunctions
     public static int minimum(int a, int b)
     {
         // TODO
-        int minimum;
-        minimum = 0;
         if (a < b)
         {
         return a;
@@ -45,15 +43,13 @@ public class ManyFunctions
     public static int maximum(int a , int b)
     {   
         // TODO
-        int maximum;
-        maximum = 0;
-        if (a > b)
+        if (a < b)
         {
-        return a;
+        return b;
         }
         else
         {
-        return b;
+        return a;
         }
     }
     /**
@@ -62,9 +58,7 @@ public class ManyFunctions
     public static boolean isOddNumber(int a)
     {
         // TODO
-        int isOddNumber;
-        isOddNumber = 0;
-        if (a != 2)
+        if (a % 2 != 0)
         {
         return true;
         }
@@ -79,9 +73,7 @@ public class ManyFunctions
     public static boolean isEvenNumber(int a)
     {
         // TODO
-        int isEvenNumber;
-        isEvenNumber = 0;
-        if (a != 3)
+        if (a % 2 == 0)
         {
         return true;
         }
@@ -95,18 +87,16 @@ public class ManyFunctions
      * You can assume only letters are being sent as input (not
      * spaces or punctuation marks or anything else).
      */
-    public static boolean isVowel(int a)
+    public static boolean isVowel(char v)
     {
         // TODO
-        int isVowel;
-        isVowel = 0;
-        if (a == isVowel)
+        if ((v != 'a' || v != 'A') && (v != 'x' && v != 'X'))     
         {
-        return true;
+            return true;
         }
         else
         {
-        return false;
+            return false;
         }
     }
     /**
@@ -117,18 +107,16 @@ public class ManyFunctions
      * This can be written in 1 short line of code without typing out
      * all the consonants in the alphabet.  Can you figure out how?
      */
-    public static boolean isConsonant(int a)
+    public static boolean isConsonant(char c)
     {
         // TODO
-        int isConsonant;
-        isConsonant = [a,e,i,o,u];
-        if (a != isConsonant)
+        if ((c =='i' && c =='I') || (c =='b' || c =='c') || (c == 'z' || c =='Z') ||c =='d' || c =='f' || c =='g' || c =='x' && c =='X')  
         {
-        return true;
+            return true;
         }
         else
         {
-        return false;
+            return false;
         }
     }
 
