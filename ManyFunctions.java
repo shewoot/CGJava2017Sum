@@ -30,11 +30,11 @@ public class ManyFunctions
         // TODO
         if (a < b)
         {
-        return a;
+            return a;
         }
         else
         {
-        return b;
+            return b;
         }
     }
     /**
@@ -45,11 +45,11 @@ public class ManyFunctions
         // TODO
         if (a < b)
         {
-        return b;
+            return b;
         }
         else
         {
-        return a;
+            return a;
         }
     }
     /**
@@ -60,11 +60,11 @@ public class ManyFunctions
         // TODO
         if (a % 2 != 0)
         {
-        return true;
+            return true;
         }
         else
         {
-        return false;
+            return false;
         }
     }
     /**
@@ -75,11 +75,11 @@ public class ManyFunctions
         // TODO
         if (a % 2 == 0)
         {
-        return true;
+            return true;
         }
         else
         {
-        return false;
+            return false;
         }
     }
     /**
@@ -90,7 +90,7 @@ public class ManyFunctions
     public static boolean isVowel(char v)
     {
         // TODO
-        if ((v != 'a' || v != 'A') && (v != 'x' && v != 'X'))     
+        if ((v == 'a' || v == 'A' || v == 'e' || v == 'E' || v == 'i' || v == 'I' || v == 'o' || v == 'O' || v == 'u' || v == 'U') && (v != 'x' && v != 'X'))     
         {
             return true;
         }
@@ -110,7 +110,7 @@ public class ManyFunctions
     public static boolean isConsonant(char c)
     {
         // TODO
-        if ((c =='i' && c =='I') || (c =='b' || c =='c') || (c == 'z' || c =='Z') ||c =='d' || c =='f' || c =='g' || c =='x' && c =='X')  
+        if ((c !='i' && c !='I' && c != 'a' && c != 'A' && c != 'e' && c != 'E' && c != 'o' && c != 'O' && c != 'u' && c != 'U') || (c =='b' || c =='c') || (c == 'z' || c =='Z') ||c =='d' || c =='f' || c =='g' || c =='x' && c =='X')  
         {
             return true;
         }
@@ -119,7 +119,6 @@ public class ManyFunctions
             return false;
         }
     }
-
     /**
      * Runs a series of test cases against the above methods.
      *
@@ -271,5 +270,5 @@ public class ManyFunctions
         else 
         {
             out.println(testFailures + " tests failed.  Keep trying!"); }
-} 
+    } 
 }
