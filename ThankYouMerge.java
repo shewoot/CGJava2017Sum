@@ -82,17 +82,18 @@ public class ThankYouMerge
             System.out.println("---Thank You Letters---");
             System.out.println("");
             System.out.println("What is the donor first and last name?  ");
-            donorName = keyboard.nextLine();  
-            if (wantToStop.equals ("quit"))
+            donorName = keyboard.nextLine();
+            //wantToStop = keyboard.nextLine();
+            if (donorName.equals("quit"))
             {
-                System.out.println("You have quit.");
                 keepGoing = false;
+                System.out.println("You have quit.");
             }
             else
             {
                 System.out.println("What is the donation amount? $ ");
                 donorAmount = keyboard.nextLine();
-                System.out.println("Press enter for your letter");
+                System.out.println("Press enter for your printed letter");
                 wantToStop = keyboard.nextLine();System.out.println("");
                 System.out.println("Dear " + donorName + ",");
                 System.out.println("");
