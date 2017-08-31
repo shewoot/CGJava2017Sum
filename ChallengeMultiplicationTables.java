@@ -13,22 +13,32 @@ public class ChallengeMultiplicationTables
     public static void main(String[]args)
     {
         Scanner S = new Scanner(System.in);
-        System.out.println("Enter the number up to whose multiplication table is needed");
+        System.out.println("Welcome to Multiplication Tables");
+        System.out.println("How large would you like to see the them?  ");
         int size = S.nextInt();
         System.out.print("  ");
-        for(int i = 0; i <= 20; i++)
-            System.out.print(" " + i + " ");
+        for(int i = 0; i <= size; i++)
+        {   
+            System.out.format("%4d", i );
+        }
         System.out.println();
         for(int i = 0; i <= size; i++)
         {
-            System.out.print(i);
-            for(int j = 0; j <= 20; j++)
+            if (i < 10)
+            {
+                System.out.print(" " + i);
+            }
+            else
+            {
+                System.out.print(i);
+            }
+            for(int j = 0; j <= size; j++)
             {
                 int k =  i*j;
                 if(k < 20)
-                    System.out.print("  " + k);
+                    System.out.format("%4d", k);
                 else
-                    System.out.print(" " + k);
+                    System.out.format("%4d", k);
             }
             System.out.println();
         }           
