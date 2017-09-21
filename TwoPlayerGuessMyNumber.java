@@ -25,7 +25,6 @@ public class TwoPlayerGuessMyNumber
     {
         Scanner inputKeyboard = new Scanner(System.in);
         Random randomNumber = new Random();
-        
         int yourGuess = 0;
         int counter = 0;
         String player1 = "";
@@ -33,27 +32,36 @@ public class TwoPlayerGuessMyNumber
         int numberGuess = randomNumber.nextInt(100);
         int numberLimit2 = 100;
         int numberLimit1 = 1;
-        //String winner = "";
         boolean gameWin = false;
-        out.println("I'm thinking of a number between 1 and 100. ");
-        out.println("Enter the player's names... ");
+        out.println("*****Welcome to a fun Guessing Game*****");
+        out.println("Guess my number...I'm thinking of a number between 1 and 100. ");
+        out.println("Enter two player's names... ");
         player1 = inputKeyboard.nextLine();
-        
         player2 = inputKeyboard.nextLine();
-        
+        boolean isplayer1 = true;
+        //out.println(numberGuess);
         while (gameWin == false)
         {
-            out.println(numberGuess);
-            yourGuess = inputKeyboard.nextInt();
             counter++;
-            out.println(player1 + " Your Guess: ");
             numberGuess = randomNumber.nextInt(100);
+            if (isplayer1)
+            {
+                out.println();
+                out.println();
+                out.println(player1 + "...your turn to guess: ");
+            }
+            else 
+            {
+                out.println();
+                out.println();
+                out.println(player2 + "...your turn to guess: ");
+            }
+            yourGuess = inputKeyboard.nextInt();
             if (yourGuess == numberGuess)
             {
                  gameWin = true;
-                 
             }
-                if (counter == 5)
+                if (counter == 6)
                 {
                     gameWin = false;
                     out.println("You BOTH LOOSE!! You both need to go get some coffee so you can guess better!!");
@@ -62,20 +70,26 @@ public class TwoPlayerGuessMyNumber
             else if (yourGuess > numberLimit2 || yourGuess < numberLimit1)
             {
                 out.println("Oops! That number isn't between 1 and 100.  Next!!");
-                out.println(player2 + " Your Guess: ");
             }
             else if (yourGuess < numberGuess) 
             {
                 out.println("Guess higher!!");
-                out.println(player2 + " Your Guess: ");
             }
             else if (yourGuess > numberGuess) 
             {
                 out.println("Guess lower!!");
-                out.println(player2 + " Your Guess: ");
             }
+            if (gameWin && isplayer1)
+                {
+                    out.println("You Won " + player1 + "! Fantastic...");
+                }
+                else if (gameWin && !isplayer1)
+                {
+                    out.println("You Won " + player2 + "! Great Guessing...");
+                }
+            isplayer1 = !isplayer1;
         } 
-        out.println("You Got It..." + player1 + " YOU WON!!     Your number was:  " + numberGuess);
+        out.println("The winning number was:  " + numberGuess);
         out.println("It took you " + counter + " tries!");
         
     }
