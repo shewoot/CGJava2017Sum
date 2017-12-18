@@ -1,51 +1,58 @@
-public class HerbalTeaReview
-{
-    //user name (first, last)
-    //user sees all posts
-    private String postOrder;
-    private String herbalTeaName;
-    private int herbalTeaVotes;
-    private String firstName;
-    private String lastName;
-    public HerbalTeaReview(String postOrder, String herbalTeaName, int herbalTeaVotes, String firstName, String lastName)
-    {
-        this.postOrder = postOrder;
-        this.herbalTeaName = herbalTeaName;
-        this.herbalTeaVotes = herbalTeaVotes;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    public void setVotes(String newVotes)
-    {
+import java.util.*;
 
+public class HerbalTeaReview {
+    //user who posted (get user name)
+    //postOrder
+    //herbalTeaReview or content
+    //url
+    private static int nextPostOrder = 0;
+    private String User;
+    private String ReviewContent;
+    private String links;
+    private int votes;
+
+    public HerbalTeaReview(int nextPostOrder, String User, String ReviewContent, String links, int votes) {
+        this.nextPostOrder = nextPostOrder;
+        this.User = User;
+        this.ReviewContent = ReviewContent;
+        this.links = links;
+        this.votes = votes;
     }
-    public String getPostOrder()
-    {
-        return postOrder;
+
+    public HerbalTeaReview() {
+        this.nextPostOrder = nextPostOrder;
+        this.User = User;
+        this.ReviewContent = ReviewContent;
+        this.links = links;
+        this.votes = votes;
     }
-    public String getHerbalTeaName()
-    {
-        return herbalTeaName;
+
+    public void input(String cU) {
+        Scanner keyboard = new Scanner(System.in);
+        this.User = cU;
+        System.out.println("Type your Review Content");
+        this.ReviewContent = keyboard.nextLine();
+        System.out.println("Please enter any relevant links");
+        this.links = keyboard.nextLine();
+        System.out.println("Please review the tea on a scale of 1-5. Please only enter whole numbers.");
+        this.votes = Integer.parseInt(keyboard.nextLine());
     }
-    public int getHerbalTeaVotes()
-    {
-        return herbalTeaVotes;
-    }
-    public String getFirstName()
-    {
-        return firstName;
-    }
-    public String getLastName()
-    {
-        return lastName;
+
+    public void setNextPostOrder(int p) { this.nextPostOrder = p; }
+    public void setUser(String htu) { this.User = htu; }
+    public void setReviewContent(String rc) { this.ReviewContent = rc; }
+    public void setLinks(String li) { this.links = li; }
+    public void setVotes(int v) { this.votes = votes; }
+
+    public int getNextPostOrder() { return nextPostOrder; }
+    public String getUser() { return User; }
+    public String getReviewContent() { return ReviewContent; }
+    public String getLinks() { return links; }
+    public int getVotes() { return votes; }
+
+
+    public String toString() {
+        return this.nextPostOrder + ", " + this.User + ", " + this.ReviewContent + ", " + this.links + ", " + this.votes;
     }
 }
-
- 
-
-
-
-
-    
-
 
